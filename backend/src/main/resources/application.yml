@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: sistema-academico-doutrina-ielb
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/sistemaAcademicoIELB}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:djonata}
+  flyway:
+    enabled: true
+
+server:
+  port: ${SERVER_PORT:8080}

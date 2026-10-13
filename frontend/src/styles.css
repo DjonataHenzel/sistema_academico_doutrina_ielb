@@ -1,0 +1,127 @@
+:root {
+  font-family: "Aptos", "Segoe UI", sans-serif;
+  color: #17384d;
+  background: #d9e8ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #153449;
+  --blue: #1f6685;
+  --blue-bright: #2b819e;
+  --teal: #32727d;
+  --gold: #c8a759;
+  --text-muted: #5d7785;
+  --line: #b4cbd6;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.pagina-login,
+.pagina-home {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #d9e8ef;
+  background-image:
+    linear-gradient(rgba(45, 112, 142, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 112, 142, .06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.pagina-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px 32px;
+}
+
+.login-identidade {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 26px;
+  animation: surgir .55s ease-out both;
+}
+
+.marca-institucional {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 46px;
+  height: 62px;
+}
+
+.marca-institucional img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.identidade-texto { display: grid; gap: 6px; }
+.nome-igreja { color: var(--ink); font-size: .92rem; font-weight: 700; line-height: 1.25; }
+.nome-sistema { color: var(--teal); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+.painel-login {
+  width: min(100%, 440px);
+  padding: 36px 38px 38px;
+  border: 1px solid #c8dbe4;
+  border-top: 3px solid var(--blue-bright);
+  border-radius: 7px;
+  background: #f8fbfc;
+  box-shadow: 0 20px 54px rgba(29, 76, 99, .12);
+  animation: surgir .65s .08s ease-out both;
+}
+
+.titulo-login { margin-bottom: 28px; }
+.sobretitulo { margin: 0 0 10px; color: var(--teal); font-size: .68rem; font-weight: 700; letter-spacing: .17em; }
+.titulo-login h1,
+.boas-vindas h1 { margin: 0; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.titulo-login h1 { font-size: 2rem; }
+.titulo-login > p:last-child { margin: 10px 0 0; color: var(--text-muted); font-size: .9rem; }
+.painel-login label { display: block; margin: 18px 0 8px; color: #2b4757; font-size: .82rem; font-weight: 600; }
+.painel-login input { width: 100%; height: 46px; padding: 0 13px; border: 1px solid var(--line); border-radius: 5px; outline: none; color: var(--ink); background: #f5f9fb; }
+.painel-login input::placeholder { color: #748d99; }
+.painel-login input:focus { border-color: var(--blue-bright); box-shadow: 0 0 0 3px rgba(57, 165, 195, .15); }
+.painel-login button { width: 100%; min-height: 47px; margin-top: 26px; border: 1px solid var(--blue); border-radius: 5px; color: #fff; background: var(--blue); font-weight: 700; transition: background .18s ease, transform .18s ease; }
+.painel-login button:hover { background: #1e6684; transform: translateY(-1px); }
+.pagina-home { display: flex; flex-direction: column; }
+.cabecalho { display: flex; align-items: center; justify-content: space-between; min-height: 76px; padding: 0 clamp(20px, 5vw, 72px); border-bottom: 1px solid #bfd4de; background: rgba(230, 240, 245, .96); }
+.marca-home { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+.marca-home .marca-institucional { width: 28px; height: 38px; }
+.marca-home > span:last-child { display: flex; flex-direction: column; gap: 3px; }
+.marca-home strong { color: var(--ink); font-family: Georgia, serif; font-size: .9rem; letter-spacing: .08em; }
+.marca-home small { color: var(--text-muted); font-size: .72rem; }
+.botao-sair { padding: 9px 17px; border: 1px solid #91afbd; border-radius: 5px; color: var(--ink); background: #f8fbfc; font-size: .82rem; }
+.botao-sair:hover { border-color: var(--blue); color: var(--blue); }
+.boas-vindas { position: relative; display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; min-height: 420px; padding: 56px 24px; text-align: center; animation: surgir .7s ease-out both; }
+.boas-vindas > .marca-institucional { width: 48px; height: 64px; margin-bottom: 18px; }
+.boas-vindas h1 { font-size: 3.2rem; }
+.texto-boas-vindas { max-width: 450px; margin: 14px 0 0; color: var(--text-muted); font-size: .98rem; line-height: 1.7; }
+.linha-decorativa { width: 32px; height: 2px; margin-bottom: 20px; background: var(--blue-bright); }
+.rodape-home { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; color: #6b8995; font-size: .72rem; letter-spacing: .04em; }
+.rodape-home span { width: 4px; height: 4px; border-radius: 50%; background: var(--blue-bright); }
+
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .pagina-login { justify-content: center; padding: 32px 18px 24px; }
+  .login-identidade { margin-bottom: 23px; }
+  .login-identidade .marca-institucional { width: 40px; height: 54px; }
+  .nome-igreja { font-size: .83rem; }
+  .painel-login { padding: 30px 24px 28px; }
+  .titulo-login h1 { font-size: 1.75rem; }
+  .cabecalho { min-height: 68px; }
+  .boas-vindas { min-height: 360px; }
+  .boas-vindas h1 { font-size: 2.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
